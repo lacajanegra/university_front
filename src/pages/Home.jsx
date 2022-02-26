@@ -1,6 +1,11 @@
+import { Outlet } from 'react-router-dom'
+
 function Home() {
     return ( 
-        <h2>Home</h2>
+        <div>
+            <h2>Home</h2>
+            <Outlet/>
+        </div>
      );
 }
 
