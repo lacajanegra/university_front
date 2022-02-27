@@ -1,19 +1,69 @@
 import '../styles/login.css'
 import logo from '../assets/images/university-icon.svg'
-function Login() {
+import { useEffect, useState } from 'react';
+import login from '../services/login';
+import { useNavigate } from 'react-router-dom';
+
+function Alert() {
     return (
-        <main className="d-flex align-items-center justify-content-center" style={{height: "100vh"}}>
+        <div className="alert alert-danger alert-dismissible fade show" role="alert">
+            <i className="bi bi-exclamation-diamond-fill me-2"></i>Usuario o contraseña incorrecta.
+        </div>
+    )
+}
+
+function Login() {
+    const navigate = useNavigate()
+    const [user, setUser] = useState('')
+    const [password, setPassword] = useState('')
+    const [authenticated, setAuthenticated] = useState(true)
+
+    const handleChangeUser = ({ target }) => setUser(target.value)
+    const handleChangePassword = ({ target }) => setPassword(target.value)
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            const res = await login({user, password})
+            window.localStorage.setItem('loggedUserInfo', JSON.stringify(res))
+            setAuthenticated(true)
+            navigate('/app')
+        } catch (error) {
+            setAuthenticated(false)
+        }
+    }
+
+    useEffect(()=>{
+        window.localStorage.getItem('loggedUserInfo') && navigate('/app')
+    },[])
+
+    return (
+        <main className="d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
             <div className="form-signin text-center">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <img className="mb-4" src={logo} alt="" height={100} />
                     <h1 className="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
+                    {!authenticated && <Alert/>}
+
                     <div className="form-floating">
-                        <input type="email" className="form-control" id="floatingInput" placeholder='Usuario' />
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="user"
+                            placeholder='Usuario'
+                            onChange={handleChangeUser}
+                        />
                         <label>Usuario</label>
                     </div>
                     <div className="form-floating">
-                        <input type="password" className="form-control" id="floatingPassword" placeholder='Contraseña' />
+                        <input
+                            type="password"
+                            className="form-control"
+                            name="password"
+                            placeholder='Contraseña'
+                            onChange={handleChangePassword}
+                        />
                         <label>Contraseña</label>
                     </div>
 

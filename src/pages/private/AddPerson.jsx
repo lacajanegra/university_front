@@ -27,7 +27,7 @@ function AddPerson() {
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label">Tipo:</label>
-                                    <select class="form-select">
+                                    <select className="form-select">
                                         <option selected></option>
                                         <option value="Student">Estudiante</option>
                                         <option value="Teacher">Profesor</option>
