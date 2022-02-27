@@ -7,6 +7,7 @@ import ListCourses from './pages/private/ListCourses';
 import AddPerson from './pages/private/AddPerson';
 import ListPersons from './pages/private/ListPersons';
 import AddCourse from './pages/private/AddCourse';
+import AddScore from './pages/private/AddScore';
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login/>} />
         <Route path='/app' element={<Home/>}>
-          <Route index element={<ListCourses />} />
           <Route path='person/add' element={<AddPerson />} />
           <Route path='person/list' element={<ListPersons />} />
+          <Route path='course/list' element={<ListCourses />} />
           <Route path='course/add' element={<AddCourse />} />
+          <Route path='score/add' element={<AddScore />} />
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

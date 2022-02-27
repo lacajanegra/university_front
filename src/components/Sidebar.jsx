@@ -17,7 +17,13 @@ function Sidebar() {
                 </li>
                 <li className="nav-item">
                     <a href="#" className="nav-link text-white" aria-current="page">
-                    <i class="bi bi-person-plus me-2"></i>
+                        <i class="bi bi-person-lines-fill me-2"></i>
+                        Personas
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a href="#" className="nav-link text-white" aria-current="page">
+                        <i class="bi bi-person-plus me-2"></i>
                         Agregar persona
                     </a>
                 </li>

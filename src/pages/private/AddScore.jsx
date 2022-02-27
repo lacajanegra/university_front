@@ -1,22 +1,24 @@
-function AddCourse() {
-    return (
+function AddScore() {
+    return ( 
         <>
-            <h3 className="mb-3 border-bottom pb-3">Agregar curso</h3>
+            <h3 className="mb-3 border-bottom pb-3">*Nombre del curso*</h3>
             <div className="row justify-content-center mb-4">
                 <div className="col-md-6">
                     <form>
                         <div className="card mb-3">
                             <div className="card-body">
+                                <h4>Notas para: *Nombre de estudiante*</h4>
+                                <hr />
                                 <div className="mb-3">
-                                    <label className="form-label">Código:</label>
+                                    <label className="form-label">Primer corte:</label>
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Nombre:</label>
+                                    <label className="form-label">Segundo corte:</label>
                                     <input type="text" className="form-control" />
                                 </div>
                                 <div className="mb-3">
-                                    <label className="form-label">Profesor:</label>
+                                    <label className="form-label">Tercer corte:</label>
                                     <input type="text" className="form-control" />
                                 </div>
                             </div>
@@ -28,7 +30,7 @@ function AddCourse() {
                 </div>
             </div>
         </>
-    );
+     );
 }
 
-export default AddCourse;
+export default AddScore;
