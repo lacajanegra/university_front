@@ -2,7 +2,7 @@ import logo from '../assets/images/university-icon-white.svg'
 
 function Sidebar() {
     return (
-        <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ width: "250px", height: "100vh" }}>
+        <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{ width: "250px", height: "100vh", position: "fixed" }}>
             <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <img className="fs-4" src={logo} alt="" height={42} />
                 <span className="fs-4">University</span>
@@ -16,7 +16,7 @@ function Sidebar() {
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a href="#" className="nav-link" aria-current="page">
+                    <a href="#" className="nav-link text-white" aria-current="page">
                     <i class="bi bi-person-plus me-2"></i>
                         Agregar persona
                     </a>

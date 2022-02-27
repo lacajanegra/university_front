@@ -5,7 +5,7 @@ function Home() {
     return (
         <div className='d-flex'>
             <Sidebar />
-            <main className='container mt-3'>
+            <main className='container mt-3 w-100' style={{marginLeft: "250px"}}>
                 <Outlet />
             </main>
         </div>
