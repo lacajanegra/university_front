@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom'
+import Sidebar from '../components/Sidebar';
 
 function Home() {
-    return ( 
-        <div>
-            <h2>Home</h2>
-            <Outlet/>
+    return (
+        <div className='d-flex'>
+            <Sidebar />
+            <main className='container mt-3'>
+                <Outlet />
+            </main>
         </div>
-     );
+    );
 }
 
 export default Home;
