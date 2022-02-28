@@ -24,4 +24,10 @@ const list = async () => {
     return data.data
 }
 
-export default { save, list }
+const getCourse = async (id) => {
+    const config = headers()
+    const { data } = await axios.get(`${baseUrl}/courses/${id}/students`, config)
+    return data.data
+}
+
+export default { save, list, getCourse }

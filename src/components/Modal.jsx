@@ -1,8 +1,14 @@
-function Modal({ title, children }) {
+function Modal({ title, children, buttonContent, buttonType, onClick }) {
     return (
         <>
-            <button type="button" className="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Seleccionar
+            <button
+                type="button"
+                className={`btn btn-${buttonType} mt-3`}
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                onClick={onClick}
+            >
+                {buttonContent}
             </button>
 
             <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">

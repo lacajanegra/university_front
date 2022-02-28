@@ -13,7 +13,7 @@ function ListCourses() {
     }
 
     const handleClick = (props) => {
-        window.localStorage.setItem('courseInfo', JSON.stringify(props))
+        // window.localStorage.setItem('courseInfo', JSON.stringify(props))
         navigate(`/app/course/${props._id}`)
     }
 

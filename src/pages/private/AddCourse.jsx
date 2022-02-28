@@ -69,7 +69,7 @@ function AddCourse() {
                                 <div className="mb-3">
                                     <label className="form-label">Profesor:</label>
                                     <input type="text" className="form-control" value={`${teacher.name} ${teacher.lastName}`} disabled />
-                                    <Modal title="Listado de profesores">
+                                    <Modal title="Listado de profesores" buttonContent={"Seleccionar"} buttonType={"secondary"}>
                                         {teachers.map(el => {
                                             return (
                                                 <a

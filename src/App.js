@@ -21,7 +21,7 @@ function App() {
           <Route path='course/list' element={<ListCourses />} />
           <Route path='course/add' element={<AddCourse />} />
           <Route path='course/:id' element={<Course />} />
-          <Route path='score/add' element={<AddScore />} />
+          <Route path='score/add/:course/:student' element={<AddScore />} />
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
