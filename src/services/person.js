@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:3000/'
+const baseUrl = 'http://localhost:3000'
 
 const headers = () => {
     const user = JSON.parse(window.localStorage.getItem('loggedUserInfo'))
@@ -14,8 +14,14 @@ const headers = () => {
 
 const save = async params => {
     const config = headers()
-    const { data } = await axios.post(`${baseUrl}person/add`, params, config)
+    const { data } = await axios.post(`${baseUrl}/person/add`, params, config)
     return data
 }
 
-export default save
+const list = async ({ filter }) => {
+    const config = headers()
+    const { data } = await axios.get(`${baseUrl}/person/${filter}`, config)
+    return data.data
+}
+
+export default { save, list }

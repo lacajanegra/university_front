@@ -35,6 +35,12 @@ function Sidebar() {
                         Agregar persona
                     </NavLink>
                 </li>
+                <li className="nav-item">
+                    <NavLink to='/app/course/add' className="nav-link text-white">
+                        <i className="bi bi-journal-plus me-2"></i>
+                        Agregar curso
+                    </NavLink>
+                </li>
             </ul>
             <hr />
             <div className="dropdown">

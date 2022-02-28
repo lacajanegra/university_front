@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Alert from "../../components/Alert";
-import save from "../../services/person"
+import person from "../../services/person"
 
 function AddPerson() {
     const [document, setDocument] = useState('');
@@ -35,7 +35,7 @@ function AddPerson() {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const res = await save({
+            const res = await person.save({
                 ID: document,
                 name,
                 lastName,
