@@ -8,6 +8,7 @@ import AddPerson from './pages/private/AddPerson';
 import ListPersons from './pages/private/ListPersons';
 import AddCourse from './pages/private/AddCourse';
 import AddScore from './pages/private/AddScore';
+import Course from './pages/private/Course';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='person/list' element={<ListPersons />} />
           <Route path='course/list' element={<ListCourses />} />
           <Route path='course/add' element={<AddCourse />} />
+          <Route path='course/:id' element={<Course />} />
           <Route path='score/add' element={<AddScore />} />
         </Route>
         <Route path='*' element={<NotFound/>}/>
