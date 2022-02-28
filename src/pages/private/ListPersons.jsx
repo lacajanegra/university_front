@@ -13,7 +13,6 @@ function ListPersons() {
     useEffect(() => {
         getData()
     },[])
-    console.log(people)
 
     return (
         <>
