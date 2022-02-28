@@ -1,7 +1,7 @@
 function Person(props) {
     const { _id, ID, name, lastName, type } = props
     return (
-        <div key={_id} className="col mb-3">
+        <div className="col mb-3">
             <div className="card">
                 <div className="row g-0">
                     <div className="col-md-4 d-flex justify-content-center align-items-center">

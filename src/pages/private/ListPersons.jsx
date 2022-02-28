@@ -18,7 +18,7 @@ function ListPersons() {
         <>
             <h3 className="mb-3 border-bottom pb-3">Listado de personas</h3>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                {people.map(element => <Person {...element}/>)}
+                {people.map(element => <Person key={element._id} {...element}/>)}
             </div>
         </>
     );

@@ -14,7 +14,7 @@ const headers = () => {
 
 const save = async params => {
     const config = headers()
-    const { data } = await axios.post(`${baseUrl}/course/add`, params, config)
+    const { data } = await axios.post(`${baseUrl}/courses/add`, params, config)
     return data
 }
 

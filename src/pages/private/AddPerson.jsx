@@ -30,6 +30,7 @@ function AddPerson() {
         setType('')
         setUser('')
         setPassword('')
+        setAlertView(false)
     }
 
     const handleSubmit = async (event) => {

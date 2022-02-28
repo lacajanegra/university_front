@@ -1,7 +1,7 @@
 function Course(props) {
     const { _id, code, name, teacher } = props
     return (
-        <div key={_id} className="col mb-3">
+        <div className="col mb-3">
             <div className="card">
                 <div className="row g-0">
                     <div className="col-md-4 d-flex justify-content-center align-items-center">
@@ -15,8 +15,8 @@ function Course(props) {
                             <div>
                                 <small className="text-muted">{code}</small>
                             </div>
-                            <div>
-                                <small className="text-muted text-truncate">{`${teacher.name} ${teacher.lastName}`}</small>
+                            <div className="text-truncate">
+                                <small className="text-muted">{`${teacher.name} ${teacher.lastName}`}</small>
                             </div>
                         </div>
                     </div>
