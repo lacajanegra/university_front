@@ -15,7 +15,7 @@ function ListStudentsAssigned({ students, course, onClick }) {
                     <a
                         key={el._id}
                         className="text-decoration-none cursor-pointer"
-                        onClick={() => onClick(course._id, el._id)}
+                        onClick={() => onClick(course._id, el.student._id)}
                     >
                         <Person {...el.student} />
                     </a>
@@ -75,7 +75,7 @@ function Course() {
     return (
         <>
             <h3 className="mb-3 border-bottom pb-3">
-                {data.course.name} <smal className="h6 text-muted">({data.course.code})</smal>
+                {data.course.name} <span className="h6 text-muted">({data.course.code})</span>
             </h3>
             <div className="row justify-content-md-center">
                 <div className="col-md-6">
