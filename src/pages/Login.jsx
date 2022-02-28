@@ -3,14 +3,7 @@ import logo from '../assets/images/university-icon.svg'
 import { useEffect, useState } from 'react';
 import login from '../services/login';
 import { useNavigate } from 'react-router-dom';
-
-function Alert() {
-    return (
-        <div className="alert alert-danger alert-dismissible fade show" role="alert">
-            <i className="bi bi-exclamation-diamond-fill me-2"></i>Usuario o contraseña incorrecta.
-        </div>
-    )
-}
+import Alert from '../components/Alert';
 
 function Login() {
     const navigate = useNavigate()
@@ -24,7 +17,7 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const res = await login({user, password})
+            const res = await login({ user, password })
             window.localStorage.setItem('loggedUserInfo', JSON.stringify(res))
             setAuthenticated(true)
             navigate('/app')
@@ -33,9 +26,9 @@ function Login() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         window.localStorage.getItem('loggedUserInfo') && navigate('/app')
-    },[])
+    }, [])
 
     return (
         <main className="d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
@@ -44,7 +37,11 @@ function Login() {
                     <img className="mb-4" src={logo} alt="" height={100} />
                     <h1 className="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
-                    {!authenticated && <Alert/>}
+                    {!authenticated &&
+                        <Alert type="danger">
+                            <i className="bi bi-exclamation-diamond-fill me-2"></i>Usuario o contraseña incorrecta.
+                        </Alert>
+                    }
 
                     <div className="form-floating">
                         <input
