@@ -3,9 +3,6 @@ import { Navigate, Outlet } from 'react-router-dom'
 import Sidebar from '../components/Sidebar';
 
 function Home() {
-    useEffect(() => {
-
-    }, [])
     return (
         <>
             {!window.localStorage.getItem('loggedUserInfo')

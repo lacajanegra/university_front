@@ -1,6 +1,50 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/university-icon-white.svg'
 
+function NavStudents() {
+    return (
+        <ul className="nav nav-pills flex-column mb-auto">
+            <li>
+                <NavLink to='/app/course/list' className="nav-link text-white">
+                    <i className="bi bi-card-list me-2"></i>
+                    Mis cursos
+                </NavLink>
+            </li>
+        </ul>
+    )
+}
+
+function NavTeachers() {
+    return (
+        <ul className="nav nav-pills flex-column mb-auto">
+            <li>
+                <NavLink to='/app/course/list' className="nav-link text-white">
+                    <i className="bi bi-card-list me-2"></i>
+                    Cursos
+                </NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink to='/app/person/list' className='nav-link text-white'>
+                    <i className="bi bi-person-lines-fill me-2"></i>
+                    Personas
+                </NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink to='/app/person/add' className="nav-link text-white">
+                    <i className="bi bi-person-plus me-2"></i>
+                    Agregar persona
+                </NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink to='/app/course/add' className="nav-link text-white">
+                    <i className="bi bi-journal-plus me-2"></i>
+                    Agregar curso
+                </NavLink>
+            </li>
+        </ul>
+    )
+}
+
 function Sidebar() {
     const navigate = useNavigate()
     const user = JSON.parse(window.localStorage.getItem('loggedUserInfo'))
@@ -16,26 +60,9 @@ function Sidebar() {
                 <span className="fs-4">University</span>
             </div>
             <hr />
-            <ul className="nav nav-pills flex-column mb-auto">
-                <li>
-                    <NavLink to='/app/course/list' className="nav-link text-white">
-                        <i className="bi bi-card-list me-2"></i>
-                        Cursos
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to='/app/person/list' className='nav-link text-white'>
-                        <i className="bi bi-person-lines-fill me-2"></i>
-                        Personas
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to='/app/person/add' className="nav-link text-white">
-                        <i className="bi bi-person-plus me-2"></i>
-                        Agregar persona
-                    </NavLink>
-                </li>
-            </ul>
+            {user.type === "Teacher"
+                ? <NavTeachers />
+                : <NavStudents />}
             <hr />
             <div className="dropdown">
                 <a className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

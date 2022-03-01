@@ -1,13 +1,24 @@
-function Course() {
+function Course(props) {
+    const { _id, code, name, teacher } = props
     return (
         <div className="col mb-3">
             <div className="card">
-                <div className="card-body">
-                    <div>
-                        <strong>Nombre de curso</strong>
+                <div className="row g-0">
+                    <div className="col-md-4 d-flex justify-content-center align-items-center">
+                        <i className="bi bi-journal-text" style={{ fontSize: "50px" }}></i>
                     </div>
-                    <div>
-                        <span>codigo</span>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <div className="text-truncate">
+                                <strong>{name}</strong>
+                            </div>
+                            <div>
+                                <small className="text-muted">{code}</small>
+                            </div>
+                            <div className="text-truncate">
+                                <small className="text-muted">{`${teacher.name} ${teacher.lastName}`}</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

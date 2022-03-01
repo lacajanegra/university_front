@@ -1,6 +1,7 @@
 import axios from "axios";
+import URL_API from "../config/globals"
 
-const baseUrl = 'http://localhost:3000/login'
+const baseUrl = `${URL_API}/login`
 
 const login = async params => {
     const { data } = await axios.post(baseUrl, params)
