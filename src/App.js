@@ -16,7 +16,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/login' element={<Login/>} />
+        <Route path='/' element={<Navigate to='/login' />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/app' element={<Home/>}>
           <Route index element={<Navigate to='course/list' />} />
           <Route path='person/add' element={<RequirePermissions><AddPerson /></RequirePermissions>} />
