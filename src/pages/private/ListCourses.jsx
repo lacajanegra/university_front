@@ -4,6 +4,7 @@ import Course from "../../components/Course";
 import courseService from "../../services/course";
 
 function ListCourses() {
+    const user = JSON.parse(window.localStorage.getItem('loggedUserInfo'))
     const navigate = useNavigate()
     const [courses, setCourses] = useState([])
 
@@ -12,13 +13,20 @@ function ListCourses() {
         setCourses(data)
     }
 
+    const getDataFromStudent = async () => {
+        const data = await courseService.getCoursesByStudent(user._id)
+        const dataFiltred = data.map(el => el.course)
+        setCourses(dataFiltred)
+    }
+
     const handleClick = (props) => {
-        // window.localStorage.setItem('courseInfo', JSON.stringify(props))
-        navigate(`/app/course/${props._id}`)
+        user.type === "Teacher" 
+        ?navigate(`/app/course/${props._id}`)
+        :navigate(`/app/student/${props._id}/${user._id}`)
     }
 
     useEffect(() => {
-        getData()
+        user.type === "Teacher" ? getData() : getDataFromStudent()
     }, [])
 
     return (
